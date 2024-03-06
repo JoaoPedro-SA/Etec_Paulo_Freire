@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <title>Biografia</title>
+    <meta name="viewport" content="initial-scale = 1.0, maximum-scale = 1.0, user-scalable = no, width = device-width">
+
+    <!--[if lt IE 9]><script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <link rel="stylesheet" href="../style.css" media="screen">
+    <!--[if lte IE 7]><link rel="stylesheet" href="../style.ie7.css" media="screen" /><![endif]-->
+    <link rel="stylesheet" href="../style.responsive.css" media="all">
+
+
+    <script src="../jquery.js"></script>
+    <script src="../script.js"></script>
+    <script src="../script.responsive.js"></script>
+
+
+    <script>jQuery(function ($) {
+            'use strict';
+            if ($.fn.themeSlider) {
+                $(".art-slidecontainerdownload2").each(function () {
+                    var slideContainer = $(this), tmp;
+                    var inner = $(".art-slider-inner", slideContainer);
+                    inner.children().filter("script").remove();
+                    var helper = null;
+
+                    if ($.support.themeTransition) {
+                        helper = new BackgroundHelper();
+                        helper.init("horizontal", "next", $(".art-slide-item", inner).first().css($.support.themeTransition.prefix + "transition-duration"));
+                        inner.children().each(function () {
+                            helper.processSlide($(this), true);
+                        });
+
+                        var initialWidth = slideContainer.attr("data-width");
+                        var initialHeight = slideContainer.attr("data-height");
+                        helper.updateSize(inner, { width: initialWidth, height: initialHeight });
+
+                        var items = helper.items(helper.current(0), helper.next(0));
+                        helper.setBackground(inner, items);
+                        helper.setPosition(inner, items);
+
+                        slideContainer.on("beforeSlide", function () {
+                            var activeItem = $(".active", this),
+                                nextItem = $(".next, .prev", this),
+                                activePos = $(".art-slide-item", this).index(activeItem),
+                                nextPos = $(".art-slide-item", this).index(nextItem);
+
+                            var currentItems = helper.items(helper.current(activePos), helper.current(nextPos));
+
+                            helper.transition(inner, false);
+                            helper.setBackground(inner, currentItems);
+                            helper.setPosition(inner, currentItems);
+                            if (inner.length) {
+                                tmp = inner.get(0).offsetHeight;
+                            }
+
+                            var movedCurrentItems = helper.items(helper.current(activePos), helper.current(nextPos), true);
+                            helper.transition(inner, true);
+                            helper.setPosition(inner, movedCurrentItems);
+                        });
+
+                    } else if (browser.ie && browser.version <= 8) {
+                        var slidesInfo = {
+                            ".art-slidedownload20": {
+                                "bgimage": "url('../images/slidedownload20.jpg')",
+                                "bgposition": "0 0",
+                                "images": "",
+                                "positions": ""
+                            },
+                            ".art-slidedownload21": {
+                                "bgimage": "url('../images/slidedownload21.jpg')",
+                                "bgposition": "0 0",
+                                "images": "",
+                                "positions": ""
+                            },
+                            ".art-slidedownload22": {
+                                "bgimage": "url('../images/slidedownload22.jpg')",
+                                "bgposition": "0 0",
+                                "images": "",
+                                "positions": ""
+                            },
+                            ".art-slidedownload23": {
+                                "bgimage": "url('../images/slidedownload23.jpg')",
+                                "bgposition": "0 0",
+                                "images": "",
+                                "positions": ""
+                            }
+                        };
+                        $.each(slidesInfo, function (selector, info) {
+                            processElementMultiplyBg(slideContainer.find(selector), info);
+                        });
+                    }
+
+                    inner.children().eq(0).addClass("active");
+                    slideContainer.themeSlider({
+                        pause: 5300,
+                        speed: 300,
+                        repeat: true,
+                        animation: "horizontal",
+                        direction: "next",
+                        navigator: slideContainer.siblings(".art-slidenavigatordownload2"),
+                        helper: helper
+                    });
+
+
+                });
+            }
+        });
+    </script>
+    <style>
+        .art-content .art-postcontent-0 .layout-item-0 {
+            padding-right: 20px;
+            padding-bottom: 20px;
+            padding-left: 20px;
+        }
+
+        .ie7 .art-post .art-layout-cell {
+            border: none !important;
+            padding: 0 !important;
+        }
+
+        .ie6 .art-post .art-layout-cell {
+            border: none !important;
+            padding: 0 !important;
+        }
+
+        .art-slidecontainerdownload2 {
+            position: relative;
+            width: 264px;
+            height: 360px;
+        }
+
+        .default-responsive .art-header .art-slidecontainerdownload2,
+        .responsive .art-header .art-slidecontainerdownload2 {
+            position: absolute !important;
+        }
+
+        .responsive .art-pageslider .art-slidecontainerdownload2 {
+            position: absolute !important;
+        }
+
+        .art-slidecontainerdownload2 .art-slide-item {
+
+            -webkit-transform: rotate(0);
+            -moz-transform: rotate(0);
+            transform: rotate(0);
+        }
+
+        .art-slidecontainerdownload2 .art-slide-item {
+            -webkit-transition: 300ms ease-in-out left;
+            -moz-transition: 300ms ease-in-out left;
+            -ms-transition: 300ms ease-in-out left;
+            -o-transition: 300ms ease-in-out left;
+            transition: 300ms ease-in-out left;
+            position: relative;
+            display: none;
+            width: 100%;
+            height: 100%;
+        }
+
+        .art-slidecontainerdownload2 .active,
+        .art-slidecontainerdownload2 .next,
+        .art-slidecontainerdownload2 .prev {
+            display: block;
+        }
+
+        .art-slidecontainerdownload2 .active {
+            left: 0;
+        }
+
+        .ie10 .art-slidecontainerdownload2 .active {
+            left: 0.1px;
+        }
+
+        .art-slidecontainerdownload2 .next,
+        .art-slidecontainerdownload2 .prev {
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+
+        .art-slidecontainerdownload2 .next {
+            left: 100%;
+        }
+
+        .art-slidecontainerdownload2 .prev {
+            left: -100%;
+        }
+
+        .art-slidecontainerdownload2 .next.forward,
+        .art-slidecontainerdownload2 .prev.back {
+            left: 0;
+        }
+
+        .ie10 .art-slidecontainerdownload2 .next.forward,
+        .art-slidecontainerdownload2 .prev.back {
+            left: 0.1px;
+        }
+
+        .art-slidecontainerdownload2 .active.forward {
+            left: -100%;
+        }
+
+        .art-slidecontainerdownload2 .active.back {
+            left: 100%;
+        }
+
+
+
+
+        .art-slidedownload20 {
+            background-image: url('../images/slidedownload20.jpg');
+            /* background-size:  auto auto; */
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+
+        /* special setup for header/pageslider */
+        .responsive .art-header .art-slidedownload20 {
+            background-image: url('../images/slidedownload20.jpg');
+            background-size: auto auto;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+
+        .responsive .art-pageslider .art-slidedownload20 {
+            background-image: url('../images/slidedownload20.jpg');
+            background-size: auto auto;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+
+        .default-responsive .art-header .art-slidedownload20 {
+            background-image: url('../images/slidedownload20.jpg');
+            background-size: auto auto;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+
+        .default-responsive .art-pageslider .art-slidedownload20 {
+            background-image: url('../images/slidedownload20.jpg');
+            background-size: auto auto;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+
+        .art-slidedownload21 {
+            background-image: url('../images/slidedownload21.jpg');
+            /* background-size:  auto auto; */
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+
+        /* special setup for header/pageslider */
+        .responsive .art-header .art-slidedownload21 {
+            background-image: url('../images/slidedownload21.jpg');
+            background-size: auto auto;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+
+        .responsive .art-pageslider .art-slidedownload21 {
+            background-image: url('../images/slidedownload21.jpg');
+            background-size: auto auto;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+
+        .default-responsive .art-header .art-slidedownload21 {
+            background-image: url('../images/slidedownload21.jpg');
+            background-size: auto auto;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+
+        .default-responsive .art-pageslider .art-slidedownload21 {
+            background-image: url('../images/slidedownload21.jpg');
+            background-size: auto auto;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+
+        .art-slidedownload22 {
+            background-image: url('../images/slidedownload22.jpg');
+            /* background-size:  auto auto; */
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+
+        /* special setup for header/pageslider */
+        .responsive .art-header .art-slidedownload22 {
+            background-image: url('../images/slidedownload22.jpg');
+            background-size: auto auto;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+
+        .responsive .art-pageslider .art-slidedownload22 {
+            background-image: url('../images/slidedownload22.jpg');
+            background-size: auto auto;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+
+        .default-responsive .art-header .art-slidedownload22 {
+            background-image: url('../images/slidedownload22.jpg');
+            background-size: auto auto;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+
+        .default-responsive .art-pageslider .art-slidedownload22 {
+            background-image: url('../images/slidedownload22.jpg');
+            background-size: auto auto;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+
+        .art-slidedownload23 {
+            background-image: url('../images/slidedownload23.jpg');
+            /* background-size:  auto auto; */
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+
+        /* special setup for header/pageslider */
+        .responsive .art-header .art-slidedownload23 {
+            background-image: url('../images/slidedownload23.jpg');
+            background-size: auto auto;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+
+        .responsive .art-pageslider .art-slidedownload23 {
+            background-image: url('../images/slidedownload23.jpg');
+            background-size: auto auto;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+
+        .default-responsive .art-header .art-slidedownload23 {
+            background-image: url('../images/slidedownload23.jpg');
+            background-size: auto auto;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+
+        .default-responsive .art-pageslider .art-slidedownload23 {
+            background-image: url('../images/slidedownload23.jpg');
+            background-size: auto auto;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+
+        .art-slidenavigatordownload2 {
+            display: inline-block;
+            position: absolute;
+            direction: ltr !important;
+            top: 336px;
+            left: 68.18%;
+            z-index: 101;
+            line-height: 0 !important;
+            -webkit-background-origin: border !important;
+            -moz-background-origin: border !important;
+            background-origin: border-box !important;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .art-slidenavigatordownload2 {
+            background: #7A7A7A;
+            background: -webkit-linear-gradient(top, rgba(161, 161, 161, 0.6) 0, rgba(128, 128, 128, 0.6) 43%, rgba(84, 84, 84, 0.6) 100%) no-repeat;
+            background: -moz-linear-gradient(top, rgba(161, 161, 161, 0.6) 0, rgba(128, 128, 128, 0.6) 43%, rgba(84, 84, 84, 0.6) 100%) no-repeat;
+            background: -o-linear-gradient(top, rgba(161, 161, 161, 0.6) 0, rgba(128, 128, 128, 0.6) 43%, rgba(84, 84, 84, 0.6) 100%) no-repeat;
+            background: -ms-linear-gradient(top, rgba(161, 161, 161, 0.6) 0, rgba(128, 128, 128, 0.6) 43%, rgba(84, 84, 84, 0.6) 100%) no-repeat;
+            -svg-background: linear-gradient(top, rgba(161, 161, 161, 0.6) 0, rgba(128, 128, 128, 0.6) 43%, rgba(84, 84, 84, 0.6) 100%) no-repeat;
+            background: linear-gradient(to bottom, rgba(161, 161, 161, 0.6) 0, rgba(128, 128, 128, 0.6) 43%, rgba(84, 84, 84, 0.6) 100%) no-repeat;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+
+
+            padding: 7px;
+
+
+
+
+
+        }
+
+        .art-slidenavigatordownload2>a {
+            background: #474747;
+            background: #474747;
+            background: #474747;
+            background: #474747;
+            background: #474747;
+            -svg-background: #474747;
+            background: #474747;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+
+
+
+            margin: 0 10px 0 0;
+
+            width: 10px;
+
+            height: 10px;
+        }
+
+        .art-slidenavigatordownload2>a.active {
+            background: #C44A4A;
+            background: #C44A4A;
+            background: #C44A4A;
+            background: #C44A4A;
+            background: #C44A4A;
+            -svg-background: #C44A4A;
+            background: #C44A4A;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+
+
+
+            margin: 0 10px 0 0;
+
+            width: 10px;
+
+            height: 10px;
+        }
+
+        .art-slidenavigatordownload2>a:hover {
+            background: #474747;
+            background: #474747;
+            background: #474747;
+            background: #474747;
+            background: #474747;
+            -svg-background: #474747;
+            background: #474747;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+
+
+
+            margin: 0 10px 0 0;
+
+            width: 10px;
+
+            height: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="art-main">
+        <div id="art-hmenu-bg" class="art-bar art-nav">
+        </div>
+        <header class="art-header">
+
+            <div class="art-shapes">
+                <div class="art-object1397377812"></div>
+                <div class="art-object486920617"></div>
+                <div class="art-textblock art-object0">
+                    <div class="art-object0-text-container">
+                        <div class="art-object0-text"><br></div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+        </header>
+        <div class="art-sheet clearfix">
+            <nav class="art-nav">
+                <div class="art-nav-inner">
+                    <ul class="art-hmenu">
+                        <li><a href="../inicio.html" class="">Início</a></li>
+                        <li><a href="../legado.html" class="active">Legado</a>
+                            <ul class="active">
+                                <li><a href="biografia.html" class="active">Biografia</a></li>
+                                <li><a href="carreira.html">Carreira</a></li>
+                                <li><a href="principais-obras.html">Principais Obras</a>
+                                    <ul>
+                                        <li><a href="principais-obras/pedagogia-do-oprimido.html">Pedagogia do
+                                                Oprimido</a></li>
+                                        <li><a href="principais-obras/pedagogia-da-autonomia.html">Pedagogia da
+                                                Autonomia</a></li>
+                                        <li><a href="principais-obras/pedagogia-da-esperanca.html">Pedagogia da
+                                                Esperança</a></li>
+                                        <li><a href="principais-obras/educacao-como-pratica-da-liberdade.html">Educação
+                                                como Prática da Liberdade</a></li>
+                                        <li><a href="principais-obras/educacao-e-mudanca.html">Educação e Mudança</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="curiosidades.html">Curiosidades</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../grupo.html">Grupo</a></li>
+                        <li><a href="../inicio.html">Voltar</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="art-layout-wrapper">
+                <div class="art-content-layout">
+                    <div class="art-content-layout-row">
+                        <div class="art-layout-cell art-content">
+                            <article class="art-post art-article">
+                                <div class="art-postmetadataheader">
+                                    <h2 class="art-postheader">Biografia</h2>
+                                </div>
+
+                                <div class="art-postcontent art-postcontent-0 clearfix">
+                                    <div class="art-content-layout">
+                                        <div class="art-content-layout-row">
+                                            <div class="art-layout-cell layout-item-0" style="width: 100%">
+                                                <p style="margin-bottom: 1.25em; line-height: 150%;"><span
+                                                        class="ui-provider gr b c d e f g h i j k l m n o p q r s t u v w x y z ab ac ae af ag ah ai aj ak"
+                                                        dir="ltr"><span
+                                                            style="font-family: Rockwell, Arial, 'Arial Unicode MS', Helvetica, sans-serif; font-size: 16px;">&nbsp;
+                                                            &nbsp;</span></span><span
+                                                        style="font-family: Rockwell, Arial, 'Arial Unicode MS', Helvetica, sans-serif; font-size: 16px;">Nascido
+                                                        em Recife, no estado de Pernambuco, Freire cresceu em uma
+                                                        família de classe média. Ele estudou Direito na Universidade de
+                                                        Recife, mas logo abandonou o curso para se dedicar à educação.
+                                                        Freire começou a trabalhar como professor de português em
+                                                        escolas públicas em 1947, e em 1959 foi nomeado Diretor do
+                                                        Departamento de Extensão Cultural da Universidade de
+                                                        Recife.</span></p>
+                                                <p style="margin-bottom: 1.25em; line-height: 175%;"><span
+                                                        style="font-family: Rockwell, Arial, 'Arial Unicode MS', Helvetica, sans-serif; font-size: 16px;">&nbsp;
+                                                        &nbsp;Foi em seu trabalho com adultos analfabetos que Freire
+                                                        desenvolveu sua abordagem pedagógica mais conhecida, a Pedagogia
+                                                        do Oprimido. Em vez de ensinar aos alunos o que eles deveriam
+                                                        saber, Freire acreditava que os alunos deveriam ser encorajados
+                                                        a refletir sobre sua própria experiência de vida e a partir daí
+                                                        criar seu próprio conhecimento. Ele também enfatizou a
+                                                        importância da conscientização social, ou seja, ajudar os alunos
+                                                        a entenderem as forças sociais e políticas que os oprimiam, e
+                                                        incentivá-los a agir para mudar suas próprias vidas e a
+                                                        sociedade em que viviam.</span></p>
+                                                <p><a href="mailto:email@domain.com"></a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="art-content-layout">
+                                        <div class="art-content-layout-row">
+                                            <div class="art-layout-cell layout-item-0" style="width: 33%">
+                                                <p style="text-align: center;"></p>
+                                                <div id="download2"
+                                                    style="position: relative; display: inline-block; z-index: 0; margin: 1px;  border-width: 0px;  "
+                                                    class="art-collage">
+                                                    <div class="art-slider art-slidecontainerdownload2" data-width="264"
+                                                        data-height="360">
+                                                        <div class="art-slider-inner">
+                                                            <div class="art-slide-item art-slidedownload20">
+
+
+                                                            </div>
+                                                            <div class="art-slide-item art-slidedownload21">
+
+
+                                                            </div>
+                                                            <div class="art-slide-item art-slidedownload22">
+
+
+                                                            </div>
+                                                            <div class="art-slide-item art-slidedownload23">
+
+
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="art-slidenavigator art-slidenavigatordownload2"
+                                                        data-left="1" data-top="1">
+                                                        <a href="#" class="art-slidenavigatoritem"></a><a href="#"
+                                                            class="art-slidenavigatoritem"></a><a href="#"
+                                                            class="art-slidenavigatoritem"></a><a href="#"
+                                                            class="art-slidenavigatoritem"></a>
+                                                    </div>
+
+
+
+                                                </div>
+
+                                            </div>
+                                            <div class="art-layout-cell layout-item-0" style="width: 67%">
+                                                <p style="line-height: 175%;"><span
+                                                        style="font-size: 16px; font-family: rockwell, Arial, 'Arial Unicode MS', Helvetica, sans-serif;">Em
+                                                        1964, o governo militar brasileiro depôs o presidente João
+                                                        Goulart e suspendeu as liberdades civis no país. Freire foi
+                                                        preso e exilado por seu trabalho de conscientização social e sua
+                                                        crítica à estrutura social e política do Brasil. Ele passou os
+                                                        próximos 16 anos no exílio, lecionando em universidades na
+                                                        Europa, África e América Latina. Durante esse período, ele
+                                                        escreveu muitos de seus livros mais influentes, incluindo
+                                                        "Pedagogia do Oprimido", "Educação como Prática da Liberdade" e
+                                                        "Pedagogia da Esperança".<br></span></p>
+                                                <p style="margin-bottom: 0px; line-height: 175%;"><span
+                                                        style="font-size: 16px; font-family: rockwell, Arial, 'Arial Unicode MS', Helvetica, sans-serif;">&nbsp;
+                                                        &nbsp;Em 1980, Freire retornou ao Brasil, onde continuou a
+                                                        ensinar e a escrever até sua morte, em 1997. Ele foi homenageado
+                                                        em todo o mundo por sua contribuição para a educação crítica e
+                                                        popular, recebendo muitos prêmios e títulos honorários. Sua obra
+                                                        continua a ser estudada e aplicada em todo o mundo, e ele é
+                                                        considerado um dos educadores mais influentes do século
+                                                        XX.</span></p>
+                                                <p><br></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="art-footer">
+            <div class="art-footer-inner">
+                <div class="art-content-layout">
+                    <div class="art-content-layout-row">
+                        <div class="art-layout-cell layout-item-0" style="width: 50%">
+                            <p>ETEC de Vila Formosa 2023</p>
+                        </div>
+                        <div class="art-layout-cell layout-item-0" style="width: 50%">
+                            <p style="text-align: start;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3<span
+                                    style="font-family: 'Google Sans', arial, sans-serif;">º Informática</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+
+</body>
+
+</html>

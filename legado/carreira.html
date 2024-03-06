@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+<head>
+    < <meta charset="utf-8">
+        <title>Carreira</title>
+        <meta name="viewport"
+            content="initial-scale = 1.0, maximum-scale = 1.0, user-scalable = no, width = device-width">
+
+        <!--[if lt IE 9]><script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+        <link rel="stylesheet" href="../style.css" media="screen">
+        <!--[if lte IE 7]><link rel="stylesheet" href="../style.ie7.css" media="screen" /><![endif]-->
+        <link rel="stylesheet" href="../style.responsive.css" media="all">
+
+
+        <script src="../jquery.js"></script>
+        <script src="../script.js"></script>
+        <script src="../script.responsive.js"></script>
+
+
+        <script>jQuery(function ($) {
+                'use strict';
+                if ($.fn.themeSlider) {
+                    $(".art-slidecontainerEiTTG_IXgAkOWC0").each(function () {
+                        var slideContainer = $(this), tmp;
+                        var inner = $(".art-slider-inner", slideContainer);
+                        inner.children().filter("script").remove();
+                        var helper = null;
+
+                        if ($.support.themeTransition) {
+                            helper = new BackgroundHelper();
+                            helper.init("fade", "next", $(".art-slide-item", inner).first().css($.support.themeTransition.prefix + "transition-duration"));
+                            inner.children().each(function () {
+                                helper.processSlide($(this));
+                            });
+
+
+                        } else if (browser.ie && browser.version <= 8) {
+                            var slidesInfo = {
+                                ".art-slideEiTTG_IXgAkOWC00": {
+                                    "bgimage": "url('../images/slideEiTTG_IXgAkOWC00.jpg')",
+                                    "bgposition": "0 0",
+                                    "images": "",
+                                    "positions": ""
+                                },
+                                ".art-slideEiTTG_IXgAkOWC01": {
+                                    "bgimage": "url('../images/slideEiTTG_IXgAkOWC01.jpg')",
+                                    "bgposition": "0 0",
+                                    "images": "",
+                                    "positions": ""
+                                },
+                                ".art-slideEiTTG_IXgAkOWC02": {
+                                    "bgimage": "url('../images/slideEiTTG_IXgAkOWC02.jpg')",
+                                    "bgposition": "0 0",
+                                    "images": "",
+                                    "positions": ""
+                                },
+                                ".art-slideEiTTG_IXgAkOWC03": {
+                                    "bgimage": "url('../images/slideEiTTG_IXgAkOWC03.jpg')",
+                                    "bgposition": "0 0",
+                                    "images": "",
+                                    "positions": ""
+                                },
+                                ".art-slideEiTTG_IXgAkOWC04": {
+                                    "bgimage": "url('../images/slideEiTTG_IXgAkOWC04.jpg')",
+                                    "bgposition": "0 0",
+                                    "images": "",
+                                    "positions": ""
+                                }
+                            };
+                            $.each(slidesInfo, function (selector, info) {
+                                processElementMultiplyBg(slideContainer.find(selector), info);
+                            });
+                        }
+
+                        inner.children().eq(0).addClass("active");
+                        slideContainer.themeSlider({
+                            pause: 5350,
+                            speed: 350,
+                            repeat: true,
+                            animation: "fade",
+                            direction: "next",
+                            navigator: slideContainer.siblings(".art-slidenavigatorEiTTG_IXgAkOWC0"),
+                            helper: helper
+                        });
+
+
+                    });
+                }
+            });
+        </script>
+        <style>
+            .art-content .art-postcontent-0 .layout-item-0 {
+                padding-right: 20px;
+                padding-bottom: 20px;
+                padding-left: 20px;
+            }
+
+            .ie7 .art-post .art-layout-cell {
+                border: none !important;
+                padding: 0 !important;
+            }
+
+            .ie6 .art-post .art-layout-cell {
+                border: none !important;
+                padding: 0 !important;
+            }
+
+            .art-slidecontainerEiTTG_IXgAkOWC0 {
+                position: relative;
+                width: 600px;
+                height: 394px;
+            }
+
+            .default-responsive .art-header .art-slidecontainerEiTTG_IXgAkOWC0,
+            .responsive .art-header .art-slidecontainerEiTTG_IXgAkOWC0 {
+                position: absolute !important;
+            }
+
+            .responsive .art-pageslider .art-slidecontainerEiTTG_IXgAkOWC0 {
+                position: absolute !important;
+            }
+
+            .art-slidecontainerEiTTG_IXgAkOWC0 .art-slide-item {
+
+                -webkit-transform: rotate(0);
+                -moz-transform: rotate(0);
+                transform: rotate(0);
+            }
+
+
+
+            .art-slidecontainerEiTTG_IXgAkOWC0 .art-slide-item {
+                -webkit-transition: 350ms ease-in-out opacity;
+                -moz-transition: 350ms ease-in-out opacity;
+                -ms-transition: 350ms ease-in-out opacity;
+                -o-transition: 350ms ease-in-out opacity;
+                transition: 350ms ease-in-out opacity;
+                position: absolute !important;
+                display: none;
+                left: 0;
+                top: 0;
+                opacity: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            .art-slidecontainerEiTTG_IXgAkOWC0 .active,
+            .art-slidecontainerEiTTG_IXgAkOWC0 .next,
+            .art-slidecontainerEiTTG_IXgAkOWC0 .prev {
+                display: block;
+            }
+
+            .art-slidecontainerEiTTG_IXgAkOWC0 .active {
+                opacity: 1;
+            }
+
+            .art-slidecontainerEiTTG_IXgAkOWC0 .next,
+            .art-slidecontainerEiTTG_IXgAkOWC0 .prev {
+                width: 100%;
+            }
+
+            .art-slidecontainerEiTTG_IXgAkOWC0 .next.forward,
+            .art-slidecontainerEiTTG_IXgAkOWC0 .prev.back {
+                opacity: 1;
+            }
+
+            .art-slidecontainerEiTTG_IXgAkOWC0 .active.forward {
+                opacity: 0;
+            }
+
+            .art-slidecontainerEiTTG_IXgAkOWC0 .active.back {
+                opacity: 0;
+            }
+
+
+            .art-slideEiTTG_IXgAkOWC00 {
+                background-image: url('../images/slideEiTTG_IXgAkOWC00.jpg');
+                /* background-size:  auto auto; */
+                background-position: center center;
+                background-repeat: no-repeat;
+            }
+
+            /* special setup for header/pageslider */
+            .responsive .art-header .art-slideEiTTG_IXgAkOWC00 {
+                background-image: url('../images/slideEiTTG_IXgAkOWC00.jpg');
+                background-size: auto auto;
+                background-position: center center;
+                background-repeat: no-repeat;
+            }
+
+            .responsive .art-pageslider .art-slideEiTTG_IXgAkOWC00 {
+                background-image: url('../images/slideEiTTG_IXgAkOWC00.jpg');
+                background-size: auto auto;
+                background-position: center center;
+                background-repeat: no-repeat;
+            }
+
+            .default-responsive .art-header .art-slideEiTTG_IXgAkOWC00 {
+                background-image: url('../images/slideEiTTG_IXgAkOWC00.jpg');
+                background-size: auto auto;
+                background-position: center center;
+                background-repeat: no-repeat;
+            }
+
+            .default-responsive .art-pageslider .art-slideEiTTG_IXgAkOWC00 {
+                background-image: url('../images/slideEiTTG_IXgAkOWC00.jpg');
+                background-size: auto auto;
+                background-position: center center;
+                background-repeat: no-repeat;
+            }
+
+            .art-slideEiTTG_IXgAkOWC01 {
+                background-image: url('../images/slideEiTTG_IXgAkOWC01.jpg');
+                /* background-size:  auto auto; */
+                background-position: center center;
+                background-repeat: no-repeat;
+            }
+
+            /* special setup for header/pageslider */
+            .responsive .art-header .art-slideEiTTG_IXgAkOWC01 {
+                background-image: url('../images/slideEiTTG_IXgAkOWC01.jpg');
+                background-size: auto auto;
+                background-position: center center;
+                background-repeat: no-repeat;
+            }
+
+            .responsive .art-pageslider .art-slideEiTTG_IXgAkOWC01 {
+                background-image: url('../images/slideEiTTG_IXgAkOWC01.jpg');
+                background-size: auto auto;
+                background-position: center center;
+                background-repeat: no-repeat;
+            }
+
+            .default-responsive .art-header .art-slideEiTTG_IXgAkOWC01 {
+                background-image: url('../images/slideEiTTG_IXgAkOWC01.jpg');
+                background-size: auto auto;
+                background-position: center center;
+                background-repeat: no-repeat;
+            }
+
+            .default-responsive .art-pageslider .art-slideEiTTG_IXgAkOWC01 {
+                background-image: url('../images/slideEiTTG_IXgAkOWC01.jpg');
+                background-size: auto auto;
+                background-position: center center;
+                background-repeat: no-repeat;
+            }
+
+            .art-slideEiTTG_IXgAkOWC02 {
+                background-image: url('../images/slideEiTTG_IXgAkOWC02.jpg');
+                /* background-size:  auto auto; */
+                background-position: center center;
+                background-repeat: no-repeat;
+            }
+
+            /* special setup for header/pageslider */
+            .responsive .art-header .art-slideEiTTG_IXgAkOWC02 {
+                background-image: url('../images/slideEiTTG_IXgAkOWC02.jpg');
+                background-size: auto auto;
+                background-position: center center;
+                background-repeat: no-repeat;
+            }
+
+            .responsive .art-pageslider .art-slideEiTTG_IXgAkOWC02 {
+                background-image: url('../images/slideEiTTG_IXgAkOWC02.jpg');
+                background-size: auto auto;
+                background-position: center center;
+                background-repeat: no-repeat;
+            }
+
+            .default-responsive .art-header .art-slideEiTTG_IXgAkOWC02 {
+                background-image: url('../images/slideEiTTG_IXgAkOWC02.jpg');
+                background-size: auto auto;
+                background-position: center center;
+                background-repeat: no-repeat;
+            }
+
+            .default-responsive .art-pageslider .art-slideEiTTG_IXgAkOWC02 {
+                background-image: url('../images/slideEiTTG_IXgAkOWC02.jpg');
+                background-size: auto auto;
+                background-position: center center;
+                background-repeat: no-repeat;
+            }
+
+            .art-slideEiTTG_IXgAkOWC03 {
+                background-image: url('../images/slideEiTTG_IXgAkOWC03.jpg');
+                /* background-size:  auto auto; */
+                background-position: center center;
+                background-repeat: no-repeat;
+            }
+
+            /* special setup for header/pageslider */
+            .responsive .art-header .art-slideEiTTG_IXgAkOWC03 {
+                background-image: url('../images/slideEiTTG_IXgAkOWC03.jpg');
+                background-size: auto auto;
+                background-position: center center;
+                background-repeat: no-repeat;
+            }
+
+            .responsive .art-pageslider .art-slideEiTTG_IXgAkOWC03 {
+                background-image: url('../images/slideEiTTG_IXgAkOWC03.jpg');
+                background-size: auto auto;
+                background-position: center center;
+                background-repeat: no-repeat;
+            }
+
+            .default-responsive .art-header .art-slideEiTTG_IXgAkOWC03 {
+                background-image: url('../images/slideEiTTG_IXgAkOWC03.jpg');
+                background-size: auto auto;
+                background-position: center center;
+                background-repeat: no-repeat;
+            }
+
+            .default-responsive .art-pageslider .art-slideEiTTG_IXgAkOWC03 {
+                background-image: url('../images/slideEiTTG_IXgAkOWC03.jpg');
+                background-size: auto auto;
+                background-position: center center;
+                background-repeat: no-repeat;
+            }
+
+            .art-slideEiTTG_IXgAkOWC04 {
+                background-image: url('../images/slideEiTTG_IXgAkOWC04.jpg');
+                /* background-size:  auto auto; */
+                background-position: center center;
+                background-repeat: no-repeat;
+            }
+
+            /* special setup for header/pageslider */
+            .responsive .art-header .art-slideEiTTG_IXgAkOWC04 {
+                background-image: url('../images/slideEiTTG_IXgAkOWC04.jpg');
+                background-size: auto auto;
+                background-position: center center;
+                background-repeat: no-repeat;
+            }
+
+            .responsive .art-pageslider .art-slideEiTTG_IXgAkOWC04 {
+                background-image: url('../images/slideEiTTG_IXgAkOWC04.jpg');
+                background-size: auto auto;
+                background-position: center center;
+                background-repeat: no-repeat;
+            }
+
+            .default-responsive .art-header .art-slideEiTTG_IXgAkOWC04 {
+                background-image: url('../images/slideEiTTG_IXgAkOWC04.jpg');
+                background-size: auto auto;
+                background-position: center center;
+                background-repeat: no-repeat;
+            }
+
+            .default-responsive .art-pageslider .art-slideEiTTG_IXgAkOWC04 {
+                background-image: url('../images/slideEiTTG_IXgAkOWC04.jpg');
+                background-size: auto auto;
+                background-position: center center;
+                background-repeat: no-repeat;
+            }
+
+            .art-slidenavigatorEiTTG_IXgAkOWC0 {
+                display: inline-block;
+                position: absolute;
+                direction: ltr !important;
+                top: 370px;
+                left: 82.67%;
+                z-index: 101;
+                line-height: 0 !important;
+                -webkit-background-origin: border !important;
+                -moz-background-origin: border !important;
+                background-origin: border-box !important;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+                text-align: center;
+                white-space: nowrap;
+            }
+
+            .art-slidenavigatorEiTTG_IXgAkOWC0 {
+                background: #7A7A7A;
+                background: -webkit-linear-gradient(top, rgba(161, 161, 161, 0.6) 0, rgba(128, 128, 128, 0.6) 43%, rgba(84, 84, 84, 0.6) 100%) no-repeat;
+                background: -moz-linear-gradient(top, rgba(161, 161, 161, 0.6) 0, rgba(128, 128, 128, 0.6) 43%, rgba(84, 84, 84, 0.6) 100%) no-repeat;
+                background: -o-linear-gradient(top, rgba(161, 161, 161, 0.6) 0, rgba(128, 128, 128, 0.6) 43%, rgba(84, 84, 84, 0.6) 100%) no-repeat;
+                background: -ms-linear-gradient(top, rgba(161, 161, 161, 0.6) 0, rgba(128, 128, 128, 0.6) 43%, rgba(84, 84, 84, 0.6) 100%) no-repeat;
+                -svg-background: linear-gradient(top, rgba(161, 161, 161, 0.6) 0, rgba(128, 128, 128, 0.6) 43%, rgba(84, 84, 84, 0.6) 100%) no-repeat;
+                background: linear-gradient(to bottom, rgba(161, 161, 161, 0.6) 0, rgba(128, 128, 128, 0.6) 43%, rgba(84, 84, 84, 0.6) 100%) no-repeat;
+                -webkit-border-radius: 4px;
+                -moz-border-radius: 4px;
+                border-radius: 4px;
+
+
+                padding: 7px;
+
+
+
+
+
+            }
+
+            .art-slidenavigatorEiTTG_IXgAkOWC0>a {
+                background: #474747;
+                background: #474747;
+                background: #474747;
+                background: #474747;
+                background: #474747;
+                -svg-background: #474747;
+                background: #474747;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                border-radius: 50%;
+
+
+
+                margin: 0 10px 0 0;
+
+                width: 10px;
+
+                height: 10px;
+            }
+
+            .art-slidenavigatorEiTTG_IXgAkOWC0>a.active {
+                background: #C44A4A;
+                background: #C44A4A;
+                background: #C44A4A;
+                background: #C44A4A;
+                background: #C44A4A;
+                -svg-background: #C44A4A;
+                background: #C44A4A;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                border-radius: 50%;
+
+
+
+                margin: 0 10px 0 0;
+
+                width: 10px;
+
+                height: 10px;
+            }
+
+            .art-slidenavigatorEiTTG_IXgAkOWC0>a:hover {
+                background: #474747;
+                background: #474747;
+                background: #474747;
+                background: #474747;
+                background: #474747;
+                -svg-background: #474747;
+                background: #474747;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                border-radius: 50%;
+
+
+
+                margin: 0 10px 0 0;
+
+                width: 10px;
+
+                height: 10px;
+            }
+        </style>
+</head>
+
+<body>
+    <div id="art-main">
+        <div id="art-hmenu-bg" class="art-bar art-nav">
+        </div>
+        <header class="art-header">
+
+            <div class="art-shapes">
+                <div class="art-object1397377812"></div>
+                <div class="art-object486920617"></div>
+                <div class="art-textblock art-object0">
+                    <div class="art-object0-text-container">
+                        <div class="art-object0-text"><br></div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+        </header>
+        <div class="art-sheet clearfix">
+            <nav class="art-nav">
+                <div class="art-nav-inner">
+                    <ul class="art-hmenu">
+                        <li><a href="../inicio.html" class="">Início</a></li>
+                        <li><a href="../legado.html" class="active">Legado</a>
+                            <ul class="active">
+                                <li><a href="biografia.html" class="">Biografia</a></li>
+                                <li><a href="carreira.html" class="active">Carreira</a></li>
+                                <li><a href="principais-obras.html">Principais Obras</a>
+                                    <ul>
+                                        <li><a href="principais-obras/pedagogia-do-oprimido.html">Pedagogia do
+                                                Oprimido</a></li>
+                                        <li><a href="principais-obras/pedagogia-da-autonomia.html">Pedagogia da
+                                                Autonomia</a></li>
+                                        <li><a href="principais-obras/pedagogia-da-esperanca.html">Pedagogia da
+                                                Esperança</a></li>
+                                        <li><a href="principais-obras/educacao-como-pratica-da-liberdade.html">Educação
+                                                como Prática da Liberdade</a></li>
+                                        <li><a href="principais-obras/educacao-e-mudanca.html">Educação e Mudança</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="curiosidades.html">Curiosidades</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../grupo.html">Grupo</a></li>
+                        <li><a href="../index.html">Voltar</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="art-layout-wrapper">
+                <div class="art-content-layout">
+                    <div class="art-content-layout-row">
+                        <div class="art-layout-cell art-content">
+                            <article class="art-post art-article">
+                                <div class="art-postmetadataheader">
+                                    <h2 class="art-postheader">Carreira</h2>
+                                </div>
+
+                                <div class="art-postcontent art-postcontent-0 clearfix">
+                                    <div class="art-content-layout">
+                                        <div class="art-content-layout-row">
+                                            <div class="art-layout-cell layout-item-0" style="width: 100%">
+                                                <h3>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</h3>
+                                                <h3>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<div
+                                                        id="EiTTG_IXgAkOWC0"
+                                                        style="position: relative; display: inline-block; z-index: 0; margin: 1px;  border-width: 0px;  "
+                                                        class="art-collage">
+                                                        <div class="art-slider art-slidecontainerEiTTG_IXgAkOWC0"
+                                                            data-width="600" data-height="394">
+                                                            <div class="art-slider-inner">
+                                                                <div class="art-slide-item art-slideEiTTG_IXgAkOWC00">
+
+
+                                                                </div>
+                                                                <div class="art-slide-item art-slideEiTTG_IXgAkOWC01">
+
+
+                                                                </div>
+                                                                <div class="art-slide-item art-slideEiTTG_IXgAkOWC02">
+
+
+                                                                </div>
+                                                                <div class="art-slide-item art-slideEiTTG_IXgAkOWC03">
+
+
+                                                                </div>
+                                                                <div class="art-slide-item art-slideEiTTG_IXgAkOWC04">
+
+
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="art-slidenavigator art-slidenavigatorEiTTG_IXgAkOWC0"
+                                                            data-left="1" data-top="1">
+                                                            <a href="#" class="art-slidenavigatoritem"></a><a href="#"
+                                                                class="art-slidenavigatoritem"></a><a href="#"
+                                                                class="art-slidenavigatoritem"></a><a href="#"
+                                                                class="art-slidenavigatoritem"></a><a href="#"
+                                                                class="art-slidenavigatoritem"></a>
+                                                        </div>
+
+
+
+                                                    </div>
+
+
+
+
+
+
+                                                </h3>
+                                                <p><span
+                                                        style="font-family: Rockwell, Arial, 'Arial Unicode MS', Helvetica, sans-serif; font-size: 16px;">Paulo
+                                                        Freire iniciou sua carreira como professor primário em 1946, mas
+                                                        logo percebeu que a educação formal tradicional não estava
+                                                        preparando seus alunos para a vida real. Em 1959, ele foi
+                                                        nomeado Diretor de Educação e Cultura do Serviço Social do
+                                                        Comércio (SESC) em Pernambuco, onde começou a desenvolver sua
+                                                        abordagem de educação popular.</span><br></p>
+                                                <p><span style="font-family: 'Century Gothic';"><span
+                                                            style="color: rgb(211, 120, 120); font-size: 26px; line-height: 31px;">Metodologia
+                                                            de ensino de Paulo Freire</span><br></span></p>
+                                                <p><span class="ui-provider gr b c d e f g h i j k l m n o p q r s t u v w x y z ab ac ae af ag ah ai aj ak"
+                                                        dir="ltr"
+                                                        style="font-family: Rockwell, Arial, 'Arial Unicode MS', Helvetica, sans-serif; font-size: 16px;">Paulo
+                                                        Freire desenvolveu suas ideias pedagógicas a partir da
+                                                        observação da cultura dos alunos, especialmente o uso da
+                                                        linguagem, mas também do papel elitista das escolas.</span></p>
+                                                <p><span style="font-size: 16px;"><span
+                                                            style="font-family: Rockwell, Arial, 'Arial Unicode MS', Helvetica, sans-serif;">Seu
+                                                            método ficou conhecido nacionalmente com o trabalho
+                                                            realizado na cidade de Angicos (RN), em 1963, onde Freire
+                                                            alfabetizou 300 trabalhadores rurais em 40 dias.</span><span
+                                                            class="ui-provider gr b c d e f g h i j k l m n o p q r s t u v w x y z ab ac ae af ag ah ai aj ak"
+                                                            dir="ltr"><br></span></span></p>
+                                                <p><span class="ui-provider gr b c d e f g h i j k l m n o p q r s t u v w x y z ab ac ae af ag ah ai aj ak"
+                                                        dir="ltr"
+                                                        style="font-family: Rockwell, Arial, 'Arial Unicode MS', Helvetica, sans-serif; font-size: 16px;">Basicamente,
+                                                        propõe identificar e catalogar as palavras-chave do vocabulário
+                                                        dos alunos, as quais ele chamava de palavras geradoras. Após a
+                                                        identificação das palavras geradoras, o professor a mostra lado
+                                                        a lado à sua representação visual, criando assim associações.
+                                                        Essa técnica é adotada com sucesso em programas de alfabetização
+                                                        de diversos países.</span></p>
+                                                <h3>O que ele defendia?</h3>
+                                                <p><span class="ui-provider gr b c d e f g h i j k l m n o p q r s t u v w x y z ab ac ae af ag ah ai aj ak"
+                                                        dir="ltr"
+                                                        style="font-family: Rockwell, Arial, 'Arial Unicode MS', Helvetica, sans-serif; font-size: 16px;">Paulo
+                                                        Freire defende que o principal objetivo da educação é
+                                                        conscientizar o estudante, tornando-o mais crítico, sobretudo a
+                                                        respeito de suas próprias condições.<br>
+                                                        Paulo Freire qualifica o formato do professor ser a autoridade
+                                                        como alienante, pois não desenvolve a criticidade dos alunos e
+                                                        reprime sua curiosidade e criatividade, além de não ser menos
+                                                        ideologizada do que a metodologia por ele sugerida.</span></p>
+                                                <p><a href="mailto:email@domain.com"></a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="art-footer">
+            <div class="art-footer-inner">
+                <div class="art-content-layout">
+                    <div class="art-content-layout-row">
+                        <div class="art-layout-cell layout-item-0" style="width: 50%">
+                            <p>ETEC de Vila Formosa 2023</p>
+                        </div>
+                        <div class="art-layout-cell layout-item-0" style="width: 50%">
+                            <p style="text-align: start;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3<span
+                                    style="font-family: 'Google Sans', arial, sans-serif;">º Informática</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+
+</body>
+<!-- Mirrored from semanapaulofreire.com.br/site3/legado/carreira.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 16 Jan 2024 20:47:31 GMT -->
+
+</html>
